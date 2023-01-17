@@ -1,0 +1,291 @@
+
+version: 2
+
+models:
+  - name: vTableSizes
+    description: "Basic table statistics view"
+    columns:
+      - name: execution_time
+        description: "Execution time"
+        tests:
+          - not_null
+      - name: database_name
+        description: "Database name"
+        tests:
+          - not_null
+      - name: schema_name
+        description: "Schema name"
+        tests:
+          - not_null
+      - name: table_name
+        description: "Table name"
+        tests:
+          - not_null
+      - name: node_table_name
+        description: "Physical table name in node"
+        tests:
+          - not_null
+      - name: node_table_name_seq
+        description: "Node table sequence"
+        tests:
+          - not_null
+      - name: distribution_policy_name
+        description: "Table distribution policy"
+        tests:
+          - not_null
+      - name: distribution_column
+        description: "The column used for table distribution"
+      - name: distribution_id
+        description: "Distribution id"
+        tests:
+          - not_null
+      - name: index_type
+        description: "Table index type"
+        tests:
+          - not_null
+      - name: index_type_desc
+        description: "Table index type description"
+        tests:
+          - not_null
+      - name: pdw_node_id
+        description: "PDW(Analytics Platform System) node id"
+        tests:
+          - not_null
+      - name: pdw_node_type
+        description: "PDW node type"
+        tests:
+          - not_null
+      - name: pdw_node_name
+        description: "PDW node name"
+        tests:
+          - not_null
+      - name: dist_name
+        description: "Distribution name"
+        tests:
+          - not_null
+      - name: dist_position
+        description: "Distribution position"
+        tests:
+          - not_null
+      - name: partition_nmbr
+        description: "Partition number"
+        tests:
+          - not_null
+      - name: reserved_space_page_count
+        description: "Reserved space page count"
+        tests:
+          - not_null
+      - name: unused_space_page_count
+        description: "Unused space page count"
+        tests:
+          - not_null
+      - name: data_space_page_count
+        description: "Data space page count"
+        tests:
+          - not_null
+      - name: index_space_page_count
+        description: "Index space page count"
+        tests:
+          - not_null
+      - name: row_count
+        description: "Table rows count per distribution"
+        tests:
+          - not_null
+      - name: reserved_space_KB
+        description: ""
+        tests:
+          - not_null
+      - name: reserved_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: reserved_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: reserved_space_TB
+        description: ""
+        tests:
+          - not_null
+      - name: unused_space_KB
+        description: ""
+        tests:
+          - not_null
+      - name: unused_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: unused_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: unused_space_TB
+        description: ""
+        tests:
+          - not_null
+      - name: data_space_KB
+        description: ""
+        tests:
+          - not_null
+      - name: data_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: data_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: data_space_TB
+        description: ""
+        tests:
+          - not_null
+      - name: index_space_KB
+        description: ""
+        tests:
+          - not_null
+      - name: index_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: index_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: index_space_TB
+        description: ""
+        tests:
+          - not_null
+  - name: vTableSpaces
+    description: "Table row counts and used spaces view"
+    columns:
+      - name: database_name
+        description: "Database name"
+        tests:
+          - not_null
+      - name: schema_name
+        description: "Schema name"
+        tests:
+          - not_null
+      - name: table_name
+        description: "Table name"
+        tests:
+          - not_null
+      - name: distribution_policy_name
+        description: "Table distribution policy"
+        tests:
+          - not_null
+      - name: distribution_column
+        description: "Table distribution used column"
+      - name: index_type_desc
+        description: "Index type description"
+        tests:
+          - not_null
+      - name: nbr_partitions
+        description: "Total partition counts"
+        tests:
+          - not_null
+      - name: table_row_count
+        description: "Table row count"
+        tests:
+          - not_null
+      - name: table_reserved_space_GB
+        description: "Table reserved space in GB"
+        tests:
+          - not_null
+      - name: table_data_space_GB
+        description: "Table data space in GB"
+        tests:
+          - not_null
+      - name: table_index_space_GB
+        description: "Table index space in GB"
+        tests:
+          - not_null
+      - name: table_unused_space_GB
+        description: "Table unsed space in GB"
+        tests:
+          - not_null
+  - name: vTableSpacesByDist
+    description: "Table spaces by distribution view"
+    columns:
+      - name: distribution_policy_name
+        description: "Distribution policy name"
+        tests:
+          - not_null
+      - name: table_type_row_count
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_reserved_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_data_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_index_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_unused_space_GB
+        description: ""
+        tests:
+          - not_null
+  - name: vTableSpacesByIndex
+    description: "Table spaces by index view"
+    columns:
+      - name: index_type_desc
+        description: "Index type description"
+        tests:
+          - not_null
+      - name: table_type_row_count
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_reserved_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_data_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_index_space_GB
+        description: ""
+        tests:
+          - not_null
+      - name: table_type_unused_space_GB
+        description: ""
+        tests:
+          - not_null
+  - name: vTableDistributions
+    description: "Table distribution summary"
+    columns:
+      - name: distribution_id
+        description: "Distribution id"
+        tests:
+          - not_null
+      - name: total_node_distribution_row_count
+        description: ""
+        tests:
+          - not_null
+      - name: total_node_distribution_reserved_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: total_node_distribution_data_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: total_node_distribution_index_space_MB
+        description: ""
+        tests:
+          - not_null
+      - name: total_node_distribution_unused_space_MB
+        description: ""
+        tests:
+          - not_null
+
+
+
+
